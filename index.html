@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: cursive;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: lightslategray;
+    }
+    .container {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #1e1e1e;
+    }
+    .search-field {
+        width: 630px;
+        height: 60px;
+    }
+    .search-field {
+        padding: 10px;
+        font-size: 22px;
+        color: #1e1e1e;
+        border-radius: 3px;
+        border: 1px black solid;
+        outline: none;
+    }
+    .h1 {
+        font-weight: 300;
+        margin-bottom: 12px;
+        color: white;
+    }
+    .result {
+        display: none;
+        margin-top: 20px;
+        width: 630px;
+        height: 400px;
+        border-radius: 5px;
+        padding: 20px;
+        overflow-y: scroll;
+        background: #fff;
+        border-left: 6px solid #1e1e1e;
+    }
+    .result>h1 {
+        font-size: 40px;
+        font-weight: 300;
+        display: inline;
+        margin-right: 10px;
+    }
+    .result>p {
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    .phonetics {
+        padding: 2px 10px;
+        border-radius: 50px;
+        background-color: #1e1e1e;
+        color: #fff;
+    }
+    .result>audio {
+        display: block;
+        width: 100%;
+        outline: none;
+        margin-bottom: 20px;
+    }
+    .meaningheading {
+        font-weight: 500;
+    }
+    .synonyms {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .pills {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: #1e1e1e;
+        font-weight: 400;
+        color: #fff;
+        margin: 5px 8px 5px 0;
+    }
+    @media only screen and (max-width: 600px) {
+        .container {
+            padding: 20px;
+        }
+        .search-field {
+            width: 100%;
+        }
+        .result {
+            width: 100%;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <h1 class="h1">Dictionary by Pratik</h1>
+        <div class="input">
+            <input class="search-field" onkeypress="handle(event)" type="text" placeholder="Type and press enter" />
+        </div>
+        <div class="result">
+            <h1 id="word" class="word"></h1>
+            <p class="phonetics"></p>
+            <audio class="audio" src="https://lex-audio.useremarkable.com/mp3/hello_us_1_rr.mp3" controls></audio>
+            <p class="meaningheading" style="font-weight: 700;">Meaning<br></p>
+            <p class="word-definition"></p>
+            <p class="meaningheading" style="font-weight: 700;">Synonyms</p>
+            <div class="synonyms"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
