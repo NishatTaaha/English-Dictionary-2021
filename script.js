@@ -1,3 +1,5 @@
+//Link:  https://dictionaryapi.dev/
+
 const resultDiv = document.querySelector('.result');
 const wordElement = document.querySelector('.word');
 const phonetics = document.querySelector('.phonetics');
